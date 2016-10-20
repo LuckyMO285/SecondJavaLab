@@ -4,17 +4,15 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.TreeMap;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
-//import org.junit.Test;
+import org.junit.Test;
 
 public class AppTest 
     extends TestCase
 {
 	
 	// ARRAYLIST
-    @org.junit.Test
+    @Test
     public void testListSize()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -24,7 +22,7 @@ public class AppTest
         assertTrue(list.size() == 3);
     }
     
-    @org.junit.Test
+    @Test
     public void testListAdd()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -34,7 +32,7 @@ public class AppTest
         assertTrue(list.size() == 3);
     }
     
-    @org.junit.Test
+    @Test
     public void testListGet()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -44,7 +42,7 @@ public class AppTest
         assertTrue(list.get(1) == 2);
     }
     
-    @org.junit.Test
+    @Test
     public void testListIterator()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -54,17 +52,21 @@ public class AppTest
         assertTrue(list.iterator().next().intValue() == 1);
     }
     
-    @org.junit.Test
+    @Test
     public void testListEquals()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
+    	ArrayList<Integer> list2 = new ArrayList<Integer>();
     	list.add(1);
     	list.add(2);
     	list.add(3);
-        assertTrue(list.iterator().next().equals(1));
+    	list2.add(1);
+    	list2.add(2);
+    	list2.add(3);
+        assertTrue(list.equals(list2));
     }
     
-    @org.junit.Test
+    @Test
     public void testListEmpty()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -73,7 +75,7 @@ public class AppTest
         assertTrue(!list.isEmpty());
     }
     
-    @org.junit.Test
+    @Test
     public void testListAddIndex()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -84,7 +86,7 @@ public class AppTest
         assertTrue(list.iterator().next().equals(5));
     }
     
-    @org.junit.Test
+    @Test
     public void testListRemove()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -95,7 +97,7 @@ public class AppTest
         assertTrue(list.size() == 2);
     }
     
-    @org.junit.Test
+    @Test
     public void testListToString()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -105,7 +107,7 @@ public class AppTest
         assertTrue(list.toString().equals("[1, 2, 3]"));
     }
     
-    @org.junit.Test
+    @Test
     public void testListSet()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -116,7 +118,7 @@ public class AppTest
         assertTrue(list.listIterator(2).next().equals(1));
     }
     
-    @org.junit.Test
+    @Test
     public void testListClear()
     {
     	ArrayList<Integer> list = new ArrayList<Integer>();
@@ -133,97 +135,102 @@ public class AppTest
     
     
     
-    @org.junit.Test
+    @Test
     public void testSetSize()
     {
-    	HashSet<Integer> Set = new HashSet<Integer>();
-    	Set.add(1);
-    	Set.add(2);
-    	Set.add(3);
-    	Set.add(4);
-        assertTrue(Set.size() == 4);
+    	HashSet<Integer> set = new HashSet<Integer>();
+    	set.add(1);
+    	set.add(2);
+    	set.add(3);
+    	set.add(4);
+        assertTrue(set.size() == 4);
     }
     
-    @org.junit.Test
+    @Test
     public void testSetAdd()
     {
-    	HashSet<Integer> Set = new HashSet<Integer>();
-    	Set.add(1);
-    	Set.add(2);
-    	Set.add(3);
-        assertTrue(Set.size() == 3);
+    	HashSet<Integer> set = new HashSet<Integer>();
+    	set.add(1);
+    	set.add(2);
+    	set.add(3);
+    	set.add(3);
+        assertTrue(set.size() == 3);
     }
     
-    @org.junit.Test
+    @Test
     public void testSetIterator()
     {
-    	HashSet<Integer> Set = new HashSet<Integer>();
-    	Set.add(1);
-    	Set.add(2);
-    	Set.add(3);
-        assertTrue(Set.iterator().next().intValue() == 1);
+    	HashSet<Integer> set = new HashSet<Integer>();
+    	set.add(1);
+    	set.add(2);
+    	set.add(3);
+        assertTrue(set.iterator().next().intValue() == 1);
     }
     
-    @org.junit.Test
+    @Test
     public void testSetEquals()
     {
-    	HashSet<Integer> Set = new HashSet<Integer>();
-    	Set.add(1);
-    	Set.add(2);
-    	Set.add(3);
-        assertTrue(Set.iterator().next().equals(1));
+    	HashSet<Integer> set = new HashSet<Integer>();
+    	HashSet<Integer> set2 = new HashSet<Integer>();
+    	set.add(1);
+    	set.add(2);
+    	set.add(3);
+    	set2.add(1);
+    	set2.add(2);
+    	set2.add(3);
+        assertTrue(set.equals(set2));
     }
     
-    @org.junit.Test
+    @Test
     public void testSetEmpty()
     {
-    	HashSet<Integer> Set = new HashSet<Integer>();
-    	Set.add(1);
-    	Set.add(2);
-    	Set.add(3);
-        assertTrue(!Set.isEmpty());
+    	HashSet<Integer> set = new HashSet<Integer>();
+    	set.add(1);
+    	set.add(2);
+    	set.add(3);
+        assertTrue(!set.isEmpty());
     }
     
-    @org.junit.Test
+    @Test
     public void testSetRemove()
     {
-    	HashSet<Integer> Set = new HashSet<Integer>();
-    	Set.add(1);
-    	Set.add(2);
-    	Set.add(3);
-    	Set.remove(1);
-        assertTrue(Set.size() == 2);
+    	HashSet<Integer> set = new HashSet<Integer>();
+    	set.add(1);
+    	set.add(2);
+    	set.add(3);
+    	set.remove(1);
+        assertTrue(set.size() == 2);
     }
     
-    @org.junit.Test
+    @Test
     public void testSetToString()
     {
-    	HashSet<Integer> Set = new HashSet<Integer>();
-    	Set.add(1);
-    	Set.add(2);
-    	Set.add(3);
-        assertTrue(Set.toString().equals("[1, 2, 3]"));
+    	HashSet<Integer> set = new HashSet<Integer>();
+    	set.add(1);
+    	set.add(2);
+    	set.add(3);
+        assertTrue(set.toString().equals("[1, 2, 3]"));
     }
     
-    @org.junit.Test
+    @Test
     public void testContains()
     {
-    	HashSet<Integer> Set = new HashSet<Integer>();
-    	Set.add(1);
-    	Set.add(2);
-    	Set.add(3);
-        assertTrue(!Set.contains(4));
+    	HashSet<Integer> set = new HashSet<Integer>();
+    	set.add(1);
+    	set.add(2);
+    	set.add(3);
+        assertTrue(!set.contains(4));
     }
   
-    @org.junit.Test
+    @Test
     public void testSetClear()
     {
-    	HashSet<Integer> Set = new HashSet<Integer>();
-    	Set.add(1);
-    	Set.add(2);
-    	Set.add(3);
-    	Set.clear();
-        assertTrue(Set.size() == 0);
+    	HashSet<Integer> set = new HashSet<Integer>();
+    	set.add(1);
+    	set.add(2);
+    	set.add(3);
+    	set.clear();
+        assertTrue(set.size() == 0);
     }
     
    
@@ -232,121 +239,110 @@ public class AppTest
 
     
     
-    @org.junit.Test
+    @Test
     public void testMapSize()
     {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-		Map.put("Pinky", "Brain");
-        assertTrue(Map.size() == 5);
+    	TreeMap<String, String>map = new TreeMap<String, String>();
+		map.put("Hello", "Java");
+		map.put("Goodbye", "Genius");
+		map.put("Bie", "Poe");
+		map.put("Rose", "Gone");
+		map.put("Pinky", "Brain");
+        assertTrue(map.size() == 5);
     }
     
-    @org.junit.Test
-    public void testMapAdd()
-    {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-        assertTrue(Map.size() == 4);
-    }
-    
-    @org.junit.Test
+    @Test
     public void testMapRemove()
     {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-		Map.remove("Hello");
-        assertTrue(Map.size() == 3);
+    	TreeMap<String, String>map = new TreeMap<String, String>();
+		map.put("Hello", "Java");
+		map.put("Goodbye", "Genius");
+		map.put("Bie", "Poe");
+		map.put("Rose", "Gone");
+		map.remove("Hello");
+        assertTrue(map.size() == 3);
     }
 
-    @org.junit.Test
+    @Test
     public void testMapGet()
     {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-        assertTrue(Map.get("Bie") == "Poe");
+    	TreeMap<String, String>map = new TreeMap<String, String>();
+		map.put("Hello", "Java");
+		map.put("Goodbye", "Genius");
+		map.put("Bie", "Poe");
+		map.put("Rose", "Gone");
+        assertTrue(map.get("Bie").equals("Poe"));
     }
 
-    @org.junit.Test
+    @Test
     public void testMapContains()
     {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-        assertTrue(Map.containsKey("Rose"));
+    	TreeMap<String, String>map = new TreeMap<String, String>();
+		map.put("Hello", "Java");
+		map.put("Goodbye", "Genius");
+		map.put("Bie", "Poe");
+		map.put("Rose", "Gone");
+        assertTrue(map.containsKey("Rose"));
+        assertFalse(map.containsKey("jfose"));
     }
     
-    @org.junit.Test
+    @Test
     public void testMapToString()
     {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-		System.out.println(Map);
-        assertTrue(Map.toString().equals("{Bie=Poe, Goodbye=Genius, Hello=Java, Rose=Gone}"));
+    	TreeMap<String, String>map = new TreeMap<String, String>();
+		map.put("Hello", "Java");
+		map.put("Goodbye", "Genius");
+		map.put("Bie", "Poe");
+		map.put("Rose", "Gone");
+        assertTrue(map.toString().equals("{Bie=Poe, Goodbye=Genius, Hello=Java, Rose=Gone}"));
     }
     
-    @org.junit.Test
+    @Test
     public void testMapFirstKey()
     {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-        assertTrue(Map.firstKey().toString().equals("Bie"));
+    	TreeMap<String, String>map = new TreeMap<String, String>();
+		map.put("Hello", "Java");
+		map.put("Goodbye", "Genius");
+		map.put("Bie", "Poe");
+		map.put("Rose", "Gone");
+        assertTrue(map.firstKey().toString().equals("Bie"));
     }
     
-    @org.junit.Test
+    @Test
     public void testMapPut()
     {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-		Map.put("Baby", "Right");
-        assertTrue(Map.size() == 5);
+    	TreeMap<String, String>map = new TreeMap<String, String>();
+		map.put("Hello", "Java");
+		map.put("Goodbye", "Genius");
+		map.put("Bie", "Poe");
+		map.put("Rose", "Gone");
+		map.put("Baby", "Right");
+        assertTrue(map.size() == 5);
     }
     
-    @org.junit.Test
+    @Test
     public void testMapReplace()
     {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-		Map.put("Baby", "Right");
-		Map.replace("Goodbye", "Genius", "C++");
-        assertTrue(Map.get("Goodbye") == "C++");
+    	TreeMap<String, String>map = new TreeMap<String, String>();
+		map.put("Hello", "Java");
+		map.put("Goodbye", "Genius");
+		map.put("Bie", "Poe");
+		map.put("Rose", "Gone");
+		map.put("Baby", "Right");
+		map.replace("Goodbye", "Genius", "C++");
+        assertTrue(map.get("Goodbye") == "C++");
     }
     
-    @org.junit.Test
+    @Test
     public void testMapClear()
     {
-    	TreeMap<String, String>Map = new TreeMap<String, String>();
-		Map.put("Hello", "Java");
-		Map.put("Goodbye", "Genius");
-		Map.put("Bie", "Poe");
-		Map.put("Rose", "Gone");
-		Map.put("Baby", "Right");
-		Map.clear();
-        assertTrue(Map.size() == 0);
+    	TreeMap<String, String>map = new TreeMap<String, String>();
+		map.put("Hello", "Java");
+		map.put("Goodbye", "Genius");
+		map.put("Bie", "Poe");
+		map.put("Rose", "Gone");
+		map.put("Baby", "Right");
+		map.clear();
+        assertTrue(map.size() == 0);
     }
 }
